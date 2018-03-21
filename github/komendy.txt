@@ -1,0 +1,36 @@
+Instrukcja użytkowania:
+
+1. instalacja GitHub i GitHub Desktop
+
+2. komendy wpisujemy w Git Bash
+
+3. poczatkowa konfiguracja (dane osobowe, email i edytor)
+git config --global user.name "Jan Nowak"
+git config --global user.email jannowak@example.com
+git config --global core.editor brackets
+
+4. podstawowe komendy:
+cd nazwa folderu - wejscie do folderu
+cd .. - wyjscie z folderu
+ls - pokazuje zawartosc folderu
+cd ~ - powrot do glownego folderu
+mkdir - nowy katalog
+touch nazwa pliku - tworzy nowy plik
+rm -r nazwa folderu - usuniecie folderu
+rm nazwa pliku - usuniecie pliku
+pwd - sciezka do aktualnego folderu
+cp sciezka do pliku/folderu kopiowanego sciezka do folderu docelowego - kopiowanie
+mv sciezka do pliku/folderu przenoszonego sciezka do folderu docelowego - przenoszenie
+git status - status repozytorium
+git init - inicjujemy lokalne repozytorium
+git add * - dodaje pliki do sledzenia
+git commit -m 'nazwa commita' - zapisujemy pliki
+git remote add origin https://github.com/twoja_nazwa_uzytkownika_github/nazwa repozytorium.git - powiazanie lokalnego repozytorium ze zdalnym 
+git push - wysylamy pliki
+v git push -u origin master 
+git diff - roznice pomiedzy commitami
+git checkout -b nazwa galezi - tworzymy nowa galaz
+git push origin nazwa galezi - wysylamy nowa galaz
+git checkout master - przelaczenie sie na glowna galaz
+git diff master..nazwa galezi - porownanie obu galezi
+git merge master nazwa galezi - polaczenie plikow z obu galezi 
