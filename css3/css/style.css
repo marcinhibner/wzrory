@@ -3,7 +3,7 @@
 body {
     background-color: lightblue;
 }
-
+ 
 
 Selektory:
 
@@ -16,11 +16,21 @@ Selektory:
 • p + a - selektor bezpośredniego rodzeństwa
 • p ~ a - selektor rodzeństwa
 
+selektory atrybutow: (najczęściej wykorzystuje się do nadania jednolitego wyglądu polom formularzy)
+selector[att] 
+selector[att="val"] 
+selector[att~="val"] - ~ - Reprezentuje element mający atrybut att, którego wartość zawiera w sobie „val” (musi być on oddzielony spacją od pozostałych ciągów znaków). 
+selector[att*="val"] - * - Reprezentuje element mający atrybut att, którego wartość zawiera przynajmniej jedno wystąpienie łańcucha „val”. 
+selector[att^="val"] - ^ - Reprezentuje element mający atrybut att, którego wartość zaczyna się od łańcucha „val”. 
+selector[att$="val"] - $ - Reprezentuje element mający atrybut att, którego wartość kończy się łańcuchem „val”. 
+
+
 pseudo elementy (::)- Pseudo-elementy to są elementy, które nie istnieją w drzewie dokumentu
 ::before - dodanie tresci na poczatku zawartosci selektora
 ::after - dodanie tresci na koncu zawartosci selektora
 ::first-letter - zmiana wygladu pierwszej litery
 ::first-line - zmiana wygladu pierwszej lini
+
 
 pseudo klasy (:) - Pseudo-klasy wykorzystywane są do nadawania specjalnych właściwości elementom języka HTML.  Właściwości te są dodawane do elementów po wykonaniu określonej akcji użytkownika lub gdy element ma określone położenie w strukturze dokumentu. 
 :link - wyglad nieodwiedzonych linkow
@@ -32,7 +42,8 @@ pseudo klasy (:) - Pseudo-klasy wykorzystywane są do nadawania specjalnych wła
 :last-child - osttani zagniezdzony element
 :only-child - do wskazania kazdego elementu ktory jest jedynym dzieckiem swojego rodzica
 :empty - element ktory nie posiada zawartosci
-
+:nth-child() oraz :nth-last-child() - Służa do odszukania elementów (wg wzoru) będących dziećmi swojego rodzica. Rozpoczyna liczenie dzieci od pierwszego dziecka do ostatniego dziecka a last na odwrot. Wartosci even (parzyste) i odd (nie parzyste), liczba (wyszuka konkretne dziecko)
+Wzor an+b - (a - co jaka liczbe ma wskazywac dzieci, b - od ktorego dziecka ma liczyc)
 
 
 Pozycjonowanie:
@@ -98,3 +109,16 @@ procentowego od 0% do 100%.
 
 • zapis rgba - wymaga on dodatkowego parametru określającego stopień przeźroczystości. Do określenia stopnia przezroczystości używa się liczb dziesiętnych z zakresu 0 - 1.0,
 przy czym wartość 1.0 oznacza pełne krycie, a 0 pełną przezroczystość.  
+
+
+Wyswietlanie elementow:
+Elementy liniowe - Elementy liniowe to takie elementy, które domyślnie wyświetlane są w jednej linii (obok siebie). span, a. Domyślna przestrzeń (wysokość i szerokość) jaką zajmuje element wyświetlany w linii jest uzależniona od zawartości jaka się w nim znajdzie. Elementy liniowe traktowane sa jak tekst. Wyśrodkowanie elementu liniowego jest możliwe, jeżeli do elementu rodzica, który jest elementem blokowym, zostanie dodana właściwość text-align:center 
+Ponadto niektóre właściwości CSS nie mają zastosowania do elementów liniowych. Tymi właściwościami są, np. width oraz height 
+
+Elementy blokowe - to takie elementy, które domyślnie wyświetlane są jeden pod drugim. div, p, h. Przestrzeń jaką zajmuje element blokowy jest uzależniona od szerokości jego elementu rodzica, domyślnie jest to 100% szerokości rodzica. 
+
+display - wyswietlanie
+
+floating - oplywanie
+
+transition - przejscie
