@@ -1,5 +1,81 @@
+/*sposob zapisu kodu*/
+
 body {
     background-color: lightblue;
 }
 
-/*sposob zapisu kodu*/
+
+Selektory:
+
+• p - selektor znacznika
+• #identyfikator - selektor identyfikatora
+• .klasa - selektor klasy
+• li > a - selektor bezpośredniego potomka
+• li a - selektor potomka
+• p + a - selektor bezpośredniego rodzeństwa
+• p ~ a - selektor rodzeństwa
+
+
+Pozycjonowanie:
+position:
+
+-static - Domyślna pozycja nie pozwalająca na zmianę położenia elementu względem innych
+elemntów
+
+-relative - Pozwala na ustalenie pozycji za pomocą właściwości top, bottom, left, right wzgledem
+elementu nadrzednego. Pozycja elementu nie zmienia położenia innych elementów. 
+
+-absolute - Pozwala na ustalenie pozycji za pomocą właściwości top, bottom, left, right wzgledem
+elementu nadrzednego, który znajduje się w pozycji relatynwej. Element w pozycji
+absolutnej robi miejsce innym elementom w danym kontenerze
+
+-fixed - Pozwala na ustalenie pozycji za pomocą właściwości top, bottom, left, right wzgledem
+okna przeglądarki. Element ma stałą pozycję względem okna przeglądaki. 
+
+
+Jednostki:
+font-size:
+
+Absolutne (Używa ich się wtedy gdy chcemy aby wybrany element zajmował taki sam obszar na
+ekranie niezależnie od wielkości i rozdzielczości monitora)
+
+px - piksele
+cm - centymetry
+mm - milimetry
+in - cale
+pt - punkty
+pc - pica
+
+Relatywne (Stosuje się je wtedy gdy chcemy odwołać się do rozmiaru innego elementu lub
+rozmiaru okna użytkownika. Jednostki względne podają długość w odniesieniu do
+innego rozmiaru. Używane są jeśli chcemy zachować proporcje wyświetlania różnych
+elementów. )
+
+em - wysokość aktualnej czcionki 
+rem - wysokość czcionki elementu korzenia w drzewie dokumentu (element <html>)
+% - procenty - procentowa wielkość odpowiedniej własności elementu rodzica
+vw - viewport width - procentowa szerokość obszaru wyświetlania
+vh - viewport height - procentowa wysokość obszaru wyświetlania 
+vmin - viewport minimum - mniejsza z wartości vw lub vh
+vmax - viewport maximum - większa z wartości vw lub vh
+
+
+Kolory:
+background-color - kolor tla
+color - kolor czcionki
+
+• kolory predefiniowane - 140 kolorow
+
+• zapis heksadecymalny - #00FFFF (00-czerwony, FF-zielony, FF-niebieski)
+Za pomocą znaków: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F nadaje się intensywność
+danej barwie. Litery od A do F oznaczają liczby od 10 do 15
+
+• skrócony zapis heksadecymalny - jeżeli każda z barw będzie składała się z dwóch takich samych znaków
+
+• zapis rgb - Po literach rgb, w nawiasie znajdują się trzy liczby określające intensywność kolejno
+barw: czerwonej, zielonej, niebieskiej. Liczby te oddzielone są od siebie przecinkami i
+każda z nich znajduje się w zakresie od 0 do 255. Możemy użyć też zapisu
+procentowego od 0% do 100%. 
+
+• zapis rgba - wymaga on dodatkowego parametru określającego stopień przeźroczystości. Do określenia stopnia przezroczystości używa się liczb dziesiętnych z zakresu 0 - 1.0,
+przy czym wartość 1.0 oznacza pełne krycie, a 0 pełną przezroczystość.  
