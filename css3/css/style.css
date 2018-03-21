@@ -7,6 +7,7 @@ body {
 
 Selektory:
 
+* - selektor uniwersalny
 • p - selektor znacznika
 • #identyfikator - selektor identyfikatora
 • .klasa - selektor klasy
@@ -14,6 +15,24 @@ Selektory:
 • li a - selektor potomka
 • p + a - selektor bezpośredniego rodzeństwa
 • p ~ a - selektor rodzeństwa
+
+pseudo elementy (::)- Pseudo-elementy to są elementy, które nie istnieją w drzewie dokumentu
+::before - dodanie tresci na poczatku zawartosci selektora
+::after - dodanie tresci na koncu zawartosci selektora
+::first-letter - zmiana wygladu pierwszej litery
+::first-line - zmiana wygladu pierwszej lini
+
+pseudo klasy (:) - Pseudo-klasy wykorzystywane są do nadawania specjalnych właściwości elementom języka HTML.  Właściwości te są dodawane do elementów po wykonaniu określonej akcji użytkownika lub gdy element ma określone położenie w strukturze dokumentu. 
+:link - wyglad nieodwiedzonych linkow
+:visited - wyglad odwiedzonych linkow
+:hover - wyglad elementu na ktory najedziemy kursorem
+:active - wyglad elementu od momentu kliknięcia na niego lewym przyciskiem myszy, do momentu gdy ten przycisk zostanie puszczony
+:focus - do aktualnie aktywnego elementu
+:first-child - pierwszy zagniezdzony element
+:last-child - osttani zagniezdzony element
+:only-child - do wskazania kazdego elementu ktory jest jedynym dzieckiem swojego rodzica
+:empty - element ktory nie posiada zawartosci
+
 
 
 Pozycjonowanie:
