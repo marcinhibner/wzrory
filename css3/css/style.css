@@ -5,8 +5,7 @@ body {
 }
  
 
-Selektory:
-
+SELEKTORY:
 * - selektor uniwersalny
 • p - selektor znacznika
 • #identyfikator - selektor identyfikatora
@@ -16,7 +15,7 @@ Selektory:
 • p + a - selektor bezpośredniego rodzeństwa
 • p ~ a - selektor rodzeństwa
 
-selektory atrybutow: (najczęściej wykorzystuje się do nadania jednolitego wyglądu polom formularzy)
+SELEKTORY ATRYBUTOW: (najczęściej wykorzystuje się do nadania jednolitego wyglądu polom formularzy)
 selector[att] 
 selector[att="val"] 
 selector[att~="val"] - ~ - Reprezentuje element mający atrybut att, którego wartość zawiera w sobie „val” (musi być on oddzielony spacją od pozostałych ciągów znaków). 
@@ -25,14 +24,14 @@ selector[att^="val"] - ^ - Reprezentuje element mający atrybut att, którego w
 selector[att$="val"] - $ - Reprezentuje element mający atrybut att, którego wartość kończy się łańcuchem „val”. 
 
 
-pseudo elementy (::)- Pseudo-elementy to są elementy, które nie istnieją w drzewie dokumentu
+PSEUDO ELEMENTY (::)- Pseudo-elementy to są elementy, które nie istnieją w drzewie dokumentu
 ::before - dodanie tresci na poczatku zawartosci selektora
 ::after - dodanie tresci na koncu zawartosci selektora
 ::first-letter - zmiana wygladu pierwszej litery
 ::first-line - zmiana wygladu pierwszej lini
 
 
-pseudo klasy (:) - Pseudo-klasy wykorzystywane są do nadawania specjalnych właściwości elementom języka HTML.  Właściwości te są dodawane do elementów po wykonaniu określonej akcji użytkownika lub gdy element ma określone położenie w strukturze dokumentu. 
+PSEUDO KLASY (:) - Pseudo-klasy wykorzystywane są do nadawania specjalnych właściwości elementom języka HTML.  Właściwości te są dodawane do elementów po wykonaniu określonej akcji użytkownika lub gdy element ma określone położenie w strukturze dokumentu. 
 :link - wyglad nieodwiedzonych linkow
 :visited - wyglad odwiedzonych linkow
 :hover - wyglad elementu na ktory najedziemy kursorem
@@ -46,7 +45,7 @@ pseudo klasy (:) - Pseudo-klasy wykorzystywane są do nadawania specjalnych wła
 Wzor an+b - (a - co jaka liczbe ma wskazywac dzieci, b - od ktorego dziecka ma liczyc)
 
 
-Pozycjonowanie:
+POZYCJONOWANIE:
 position:
 
 -static - Domyślna pozycja nie pozwalająca na zmianę położenia elementu względem innych
@@ -63,7 +62,7 @@ absolutnej robi miejsce innym elementom w danym kontenerze
 okna przeglądarki. Element ma stałą pozycję względem okna przeglądaki. 
 
 
-Jednostki:
+JEDNOSTKI:
 font-size:
 
 Absolutne (Używa ich się wtedy gdy chcemy aby wybrany element zajmował taki sam obszar na
@@ -90,7 +89,7 @@ vmin - viewport minimum - mniejsza z wartości vw lub vh
 vmax - viewport maximum - większa z wartości vw lub vh
 
 
-Kolory:
+KOLORY:
 background-color - kolor tla
 color - kolor czcionki
 
@@ -111,14 +110,115 @@ procentowego od 0% do 100%.
 przy czym wartość 1.0 oznacza pełne krycie, a 0 pełną przezroczystość.  
 
 
-Wyswietlanie elementow:
+WYSWIETLANIE ELEMENTOW:
 Elementy liniowe - Elementy liniowe to takie elementy, które domyślnie wyświetlane są w jednej linii (obok siebie). span, a. Domyślna przestrzeń (wysokość i szerokość) jaką zajmuje element wyświetlany w linii jest uzależniona od zawartości jaka się w nim znajdzie. Elementy liniowe traktowane sa jak tekst. Wyśrodkowanie elementu liniowego jest możliwe, jeżeli do elementu rodzica, który jest elementem blokowym, zostanie dodana właściwość text-align:center 
 Ponadto niektóre właściwości CSS nie mają zastosowania do elementów liniowych. Tymi właściwościami są, np. width oraz height 
 
 Elementy blokowe - to takie elementy, które domyślnie wyświetlane są jeden pod drugim. div, p, h. Przestrzeń jaką zajmuje element blokowy jest uzależniona od szerokości jego elementu rodzica, domyślnie jest to 100% szerokości rodzica. 
 
-display - wyswietlanie
+display:
+block - Element HTML będzie wyświetlany w bloku (jeden pod drugim). 
 
-floating - oplywanie
+inline - Element HTML będzie wyświetlany w linii (jeden obok drugiego).
 
-transition - przejscie
+inline-block - Element HTML będzie interpretowany przez przeglądarkę internetową jako element liniowy, lecz z zachowaniem pewnych cech elementu blokowego, dzięki czemu takie właściwości jak: padding, margin, width czy height będą na niego oddziaływały jak na normalny element blokowy.
+
+none - Element nie będzie wyświetlany. 
+
+
+
+OPLYWANIE ELEMENTOW:
+float:
+Właściwość float określa czy element powinien być opływany i z której strony. Właściwość clear używamy do kontroli opływania elementów HTML. 
+
+
+
+EFEKT PRZEJSCIA:
+transition:
+Właściwość transition pozwala utworzyć pewien efekt animacji, ktora zmieni wartości właściwości CSS dla elementu HTML. Zmiany dokonuja się skokowo.
+
+Wlasciwosci efektu:
+transition-property - określa, jaka własność stylu ma podlegać efektowi przejścia (all, none, wybrana wlasciwosc)
+
+transition-duration - określa, czas trwania efektu przejścia (s v ms)
+
+transition-delay - określa, czas opóźnienie efektu przejścia (s v ms + opoznienie -+0)
+
+transition-timing-function - określa, tempo efektu przejścia
+-linear - stałe tempo efektu przejścia 
+-ease-in - wolniejsze tempo efektu przejścia na początku 
+-ease-out - wolniejsze tempo efektu przejścia na końcu 
+-ease-in-out - wolniejsze tempo efektu przejścia na początku oraz na końcu 
+-steps() - ilość klatek animacji efektu przejścia określona za pomocą funkcji steps() 
+-step-start - stałe tempo efektu przejścia z pominięciem pierwszej klatki 
+-step-end - stałe tempo efektu przejścia z pominięciem ostatniej klatki 
+-ease - efekt przejścia będzie miał wolniejszy start, lecz później przyspieszy, a następnie zwolni tempo przed zakończeniem swojego czasu wykonywania się - wartość domyślna
+
+transition - służy do zapisania wszystkich zaprezentowanych właściwości efektu transition za pomocą jednej reguły 
+•  skrótowy zapis wszystkich właściwości efektu transition, w kolejności: property, duration, timing function, delay 
+Zarówno własności transition-* jak i skrótowa własność transition mogą  przyjmować wiele wartości równolegle.
+
+
+
+WLASCIWOSCI TLA:
+background-color: Kolor tła danego elementu
+-color -  określenie własnej wartości  koloru tła elementu 
+-transparent - przezroczyste tło  wartość domyślna 
+-initial - ustawienie wartości domyślnej przeglądarki 
+-inherit - dziedzicz po rodzicu
+
+background-image: Wypełnienie tła elementu obrazkiem w formacie np. .jpg, .png, .gif. Za pomocą tej właściwości możemy wypełnić tło gradientem. 
+-none – żadna grafika nie jest wyświetlana  wartość domyślna 
+-url() – ścieżka do grafiki tła 
+-initial – ustawienie wartości domyślnej
+-inherit – dziedzicz po rodzicu
+-funkcje gradientowe – np. linear-gradient(red, yellow); 
+
+background-repeat: Określa sposób powtarzania się obrazka w tle elementu
+-repeat – grafika powtarzana w pionie oraz poziomie 
+-repeat-x – grafika powtarzana w poziomie 
+-repeat-y – grafika powtarzana w pionie 
+-no-repeat – grafika nie jest powtarzane 
+-initial – ustawienie wartości domyślnej 
+-inherit – dziedzicz po rodzicu
+
+background-position: Określa pozycję obrazka w tle elementu. 
+-left/center/right top/center/bottom – wyrównanie według wskazanych parametrów – jeśli podana jest tylko jedna wartość druga ustawiana jest na center 
+-x% y% – pozycja tła w procentach – wartość domyślna 0% 0% 
+-x y – pozycja tła w jednostkach długości 
+-no-repeat – grafika nie jest powtarzane 
+-initial – przywrócenie wartości domyślnej przeglądarki 
+-inherit – dziedzicz po rodzicu 
+
+background-attachment: Określa w jaki sposób ma zachowywać się tło obrazkowe w danym elemencie, w momencie gdy będziemy przewijać zawartość strony za pomocą suwaków przeglądarki internetowej lub w momencie gdy będziemy przewijać zawartość danego elementu za pomocą suwaków. 
+-scroll – tło elementu będzie się przewijać wraz z tym elementem – wartość domyślna 
+-fixed – grafika tła nieruchoma względem okna przeglądarki 
+-local – grafika tła przewija się wraz z zawartością elementu 
+-initial – przywrócenie wartości domyślnej przeglądarki 
+-inherit – dziedzicz po rodzicu 
+
+background-size: Określa rozmiar obrazka w tle elementu. 
+-auto – rzeczywiste wymiary obrazka – wartość domyślna 
+-szer wys – szerokość i wysokość tła obrazka w jednostkach miary (np. px), jeśli ustawiona jest tylko jedna wartość druga ustawiona jest na auto 
+-szer% wys% – szerokość i wysokość tła obrazka w procentach rozmiaru elementu nadrzędnego, jeśli ustawiona jest tylko jedna wartość druga ustawiona jest na auto 
+-cover – skalowanie grafiki tła elementu aby cały element został wypełniony grafiką. Zostają zachowane proporcje grafiki. Część grafiki nie będzie widoczna, jeśli szerokość i wysokość elementu nie są proporcjonalne do rozmiarów grafiki 
+-contain – skalowanie grafiki tła elementu aby cała grafika była widoczna. Zostają zachowane proporcje grafiki. Część elementu nie będzie wypełniona grafiką jeśli rozmiar tła i grafiki się nie pokrywają 
+-initial – przywrócenie wartości domyślnej przeglądarki 
+-inherit – dziedzicz po rodzicu 
+
+background:  służy do zapisania wszystkich zaprezentowanych właściwości tła za pomocą jednej reguły 
+
+
+
+PRZEPELNIENIE ELEMENTU:
+scroll:
+
+ 
+
+
+
+
+
+
+
+
