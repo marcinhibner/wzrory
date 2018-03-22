@@ -210,15 +210,127 @@ background:  służy do zapisania wszystkich zaprezentowanych właściwości tł
 
 
 
-PRZEPELNIENIE ELEMENTU:
-scroll:
+PRZEPELNIENIE ELEMENTU (SCROLL):
+Jeżeli zawartość elementu nie mieści się w jego rozmiarach możliwe jest ukrycie nadmiarowej zawartość, pokazanie wszystkiego poprzez powiększenie rozmiarów elementu (bez względu na parametry width i height) albo utworzenie suwaków do przewijania przepełnionej treści. Służy do tego właściwość CSS – overflow, overflow-x oraz overflow-y. 
+Właściwości te działają tylko dla elementów blokowych z określoną wysokością. 
 
- 
+-scroll – dodanie suwaków do elementu, nawet jeśli zawartość mieści się w elemencie 
+-hidden – ukrycie niemieszczącej się zawartości elementu 
+-auto – dodanie suwaków do elementu gdy zawartość nie będzie się mieścić 
+-visible – niemieszcząca się zawartość elementu pozostanie widoczna – wartość domyślna 
+-initial – przywrócenie wartości domyślnej przeglądarki 
+-inherit – dziedzicz po rodzicu 
+
+overflow - Ustala jak ma zachować się element gdy jego zawartość nie będzie się mieścić w granicach jego rozmiaru (wysokość i szerokość). 
+
+overflow-x - Ustala jak ma zachować się element gdy jego zawartość nie będzie się mieściła w granicy jego szerokości. 
+
+overflow-y - Ustala jak ma zachować się element gdy jego zawartość nie będzie się mieściła w granicy jego wysokości. 
 
 
 
+ROZMIAR ELEMENTU:
+Aby określić konkretną szerokość elementu HTML używa się właściwości CSS - width, a do określenia konkretnej wysokości elementu HTML - właściwości CSS height.
+
+Niektóre właściwości CSS mają wpływ na końcowy rozmiar elementu (szerokość oraz wysokość), obliczany przez przeglądarkę internetową. Właściwości te to: padding, margin, border, line-height. 
+
+Za pomocą właściwości box-sizing możemy ustalić czy właściwości border oraz padding mają wpływać na całkowitą szerokość i wysokość elementu, które są obliczane przez przeglądarkę internetową. 
+
+-border-box – właściwości padding oraz border nie mają wpływu na ustalony rozmiar elementu 
+-content-box – właściwości padding oraz border zmieniają ustalony rozmiar elementu – wartość domyślna 
+-initial – przywrócenie wartości domyślnej przeglądarki 
+-inherit – dziedzicz po rodzicu 
 
 
 
+RESPONSYWNOSC:
+W celu uzyskania efektu automatycznego skalowania i odpowiedniej szerokości obrazu na urządzeniach mobilnych używamy metatagu viewport, który umieszczamy w nagłówku strony <head> 
 
+<meta name="viewport" content= "width=device-width, initial-scale=1.0" >
 
+Wartość atrybutu content definiuje: 
+-Wyjściową szerokość strony - width=device-width – szerokość wyświetlacza urządzenia 
+-Wyjściowe powiększenie - initial-scale=1.0 – domyślne powiększenie 
+
+Aby stworzyć responsywną stronę internetową (RWD) czyli stronę, która będzie dobrze wyglądać zarówno na laptopach i na urządzeniach mobilnych,  możemy użyć reguł @media queries. 
+    
+Reguły @media queries służą do definiowania różnych właściwości CSS dla różnych typów mediów/urządzeń/rozdzielczości. 
+
+width / height 
+min-width / min-height 
+max-width / max-height 
+
+Określa reguły CSS, które zostaną aktywowane tylko wtedy, gdy szerokość/ wysokość okna przeglądarki internetowej będzie miała określoną wartość, lub gdy będzie większa niż podana wartość, lub gdy będzie mniejsza niż podana wartość. 
+np. @media (min-width:800px) and (max-width:1200px) 
+    
+device-width / device-height 
+min-device-width / min-device-height 
+max-device-width / max-device-height 
+    
+Określa reguły CSS, które zostaną aktywowane tylko wtedy, gdy szerokość/ wysokość rozdzielczości ekranu urządzenia będzie miała określoną wartość, lub gdy będzie większa niż podana wartość, lub gdy będzie mniejsza niż podana wartość. 
+    
+orientation - Określa reguły CSS, które zostaną aktywowane tylko wtedy, gdy szerokość okna przeglądarki internetowej będzie miała wartość mniejszą lub większą niż wysokość okna przeglądarki internetowej. 
+Cecha orientation pomaga nam wykryć w jakiej orientacji, pionowej (portrait) czy poziomej (landscape), została wyświetlona nasza strona internetowa. 
+np. @media (orientation:landscape) 
+    
+wybrane oznaczenia typów mediów:
+all – dla wszystkich mediów 
+screen – dla komputerów, tabletów, smartfonów itp. 
+print – dla drukarek 
+speech – dla czytników ekranu
+    
+np. @media screen, tv { 
+
+operatory logiczne dla reguł @media queries:
+and - operator ten łączy różne właściwości w regule @media 
+np. @media all and (
+    
+not - operator ten umożliwia zaprzeczenia danego zapisu 
+np. @media not screen { 
+    
+przecinek (,) - operator ten umożliwia stworzenie jednego zapisu reguły @media, z różnym właściwościami dla różnych typów urządzeń 
+np. @media all, screen, tv {
+    
+    
+    
+TRANSFORM - ROTACJA:
+Obracanie elementu możliwe jest dzięki funkcji rotate(). Jako właściwość przekazujemy kąt obrotu elementu (również z wartościami ujemnymi) 
+Obraz jest obracany względem jego środka, który jest domyślnym punktem odniesienia dla wszystkich transformacji.     
+np. transform: rotate(20deg); 
+    
+TRANSFORM - PRZESUNIECIE:
+-translateX – funkcja przesuwa element w osi poziomej  
+-translateY – funkcja przesuwa element w osi pionowej skrótowa funkcja 
+-translate łączy wartości obu poprzednich - translate(translateX, translateY)     
+np. transform: translate(200px, 100px);   
+    
+TRANSFORM - SKALOWANIE:
+-scaleX – skalowanie w poziomie 
+-scaleY – skalowanie w pionie  
+-scale – funkcja skrótowa 
+
+Wartość tej funkcji to liczba rzeczywista bez określonej jednostki określająca współczynnik skalowania.
+np. transform: scale(1.5); 
+    
+    
+EFEKTY ANIMACJI:
+Właściwość animation pozwala utworzyć efekt pełnej animacji (plynnej).   
+-animation-name – nazwa reguły @keyframes , która ma być wykorzystana do animacji elementu,
+-animation-duration – czas trwania animacji w (s v ms)
+-animation-timing-function – określa, w jaki sposób animacja przechodzi przez klatki kluczowe 
+    (linear - stałe tempo efektu animacji 
+    ease-in - wolniejsze tempo efektu animacji na początku 
+    ease-out - wolniejsze tempo efektu animacji na końcu 
+    ease-in-out - wolniejsze tempo efektu animacji na początku oraz na końcu 
+    ease - efekt animacji będzie miał wolniejszy start, lecz później przyspieszy, a następnie zwolni tempo przed zakończeniem swojego czasu wykonywania się - wartość domyślna  )
+-animation-iteration-count – liczba powtórzeń animacji w (liczby naturalne – określają ilość powtórzeń v infinite - animacja powtarza się cały czas) 
+    
+Reguła @keyframes określa stan początkowy i końcowy animacji lub procentowe rozmieszenie klatek animacji 
+np.   @keyframes nazwa_animacji {     
+    from v % {     
+        // Początek animacji     
+    }     
+    to v % {     
+        // Koniec animacji       
+    }   
+}
