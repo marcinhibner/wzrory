@@ -1,0 +1,191 @@
+BOOTSTRAP FRAMEWORK:
+
+Jest to najpopularniejszy darmowy framework do tworzenia responsywnych stron i aplikacji internetowych. Framework bazuje na podejściu mobile-first. 
+Zawiera gotowe szablony HTML5 i CSS3 dla typografii, formularzy, nawigacji i wielu innych elementów strony czy aplikacji internetowych. 
+zawiera także komponenty bazujące na języku JavaScript, takie jak slider, tab, toggle i wiele innych.
+Jest kompatybilny ze wszystkimi nowoczesnymi przeglądarkami.
+
+Dokładna dokumentacja frameworka i opis wszystkich komponentów można znaleść po adresem: http://getbootstrap.com/ 
+
+
+DODANIE BOOTSTRAP DO PROJEKTU:
+Można zrobić to za pomocą linków Bootstrap CDN ( https://www.bootstrapcdn.com/beta/) 
+ 
+Lub ściągnąć pliki frameworka z http://getbootstrap.com/docs/4.0/getting-started/download/ bezpośrednio do projektu i dołączyć go lokalnie. 
+ 
+Należy pamiętać ze Bootstrap JavaScript wymaga biblioteki jQuery!!! 
+Do poprawnego działania menu nawigacyjnego wymagana jest biblioteka popper.js  - https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js 
+
+
+
+KONTENERY:
+Bootstrap posiada dwa rodzaje kontenerów (containers), w których powinno się umieszczać elementy na stronie. 
+Pierwszy z nich .container zapewnia stałą szerokość kontenera, która jest określona przez szerokość GRIDa.
+
+<div class="container">   
+<!-- Zawartość kontenera --> 
+</div> 
+
+Drugi .container-fluid obejmuje całą szerokość elementu, w którym się znajduje. 
+
+<div class="container-fluid">   
+<!-- Zawartość kontenera --> 
+</div> 
+
+
+
+SYSTEM GRIDOW:
+Za pomocą Bootstrap Grid System można w projekcie w łatwy sposób implementować RWD, w postaci siatki kolumn. 
+Siatka jest stworzona w Bootstrapie za pomocą reguł @media queries i wystarczy ją zaimplementowac.
+System siatki składa się z 12 kolumn, które można grupować.  
+System siatki jest bardzo czuły i kolumny automatycznie reagują na zmianę rozmiaru ekranu. 
+ 
+Ważne pojęcia przy tworzeniu siatki: kontenery (containers), wiersze (rows) oraz kolumny (columns). 
+ 
+System ten oparty jest na flexboxie.
+
+Tworzenie siatki Bootstrap: 
+ •  wiersze powinny być umieszczane w kontenerach, a kolumny w wierszach; 
+ •  wierszy należy używać do tworzenia grup kolumn w poziomie; 
+ •  treść należy umieszczać w kolumnach; 
+ •  kolumny siatki są tworzone przez podanie liczby dwunastu dostępnych kolumn, które chcesz objąć, np. trzy równe kolumny użyłby 3 razy .col-md-4; 
+ •  alternatywnie kolumny tworzone są poprze dodanie do poszczególnych elementów w rzędzie samej klasy .col – podzieli ona rząd na tyle kolumn ile jest w nim elementów z tą klasą 
+ •  do tworzenia siatki należy używać predefiniowanych klas kontenera (.container lub .container-fluid), wiersz (.row), kolumna (np. .col-md-4). 
+ 
+ np. <div class="container-fluid">  
+         <div class="row">   
+             <div class="col-sm-6">    
+                 <p>Lorem ipsum...</p>   
+            </div>   
+            <div class="col-sm-6">    
+                 <p>Sed ut perspiciatis...</p>   
+             </div>  
+       </div> 
+ </div>
+
+
+Kolumn w Bootstrapie używamy za pomocą predefiniowanych klas. Klasa składa się z prefiksu w zależność od rozdzielczości ekranu oraz liczby, która wskazuje ile kolumn z dwunastu powinien obejmować dany element HTML. 
+ 
+Prefiksy klas: 
+.col- - dla telefonów (szerokość ekranu mniejsza niż 576px) 
+.col-sm- - dla tabletów (szerokość ekranu większa bądź równa 576px) 
+.col-md- - dla urządzeń stacjonarnych (szerokość ekranu większa bądź równa 768px) 
+.col-lg- - dla większych urządzeń stacjonarnych (szerokość ekranu większa bądź równa 992px) 
+.col-xl- - dla większych urządzeń stacjonarnych (szerokość ekranu większa bądź równa 1200px) 
+
+np. <div class="container-fluid">   
+        <div class="row">   
+            <div class="col-7 col-sm-6 col-lg-8">    
+                 .col-7 .col-sm-6 .col-lg-8   
+            </div>   
+            <div class="col-5 col-sm-6 col-lg-4">    
+                 .col-5 .col-sm-6 .col-lg-4   
+            </div> 
+      </div>  
+      <div class="row">   
+            <div class="col-6 col-sm-8 col-lg-10">    
+                 .col-6 .col-sm-8 .col-lg-10   
+            </div>   
+            <div class="col-6 col-sm-4 col-lg-2">    
+                 .col-6 .col-sm-4 .col-lg-2   
+              </div>  
+          </div>    
+      </div> 
+      
+      
+
+TYPOGRAFIA:
+Bootstrap domyślnie definiuje style dla typografii, np. rozmiary nagłówków, czcionki. 
+Za pomocą predefiniowanych klas Bootstrapa można w łatwy i szybki sposób przestylować widoki. 
+
+Bootstrap dostarcza klasy, które odpowiadają za wyrównywanie i transformacje tekstów.
+
+-Klasy do wyrównywania tekstu: 
+<p class="text-left">Tekst wyrównany do lewej.</p> 
+<p class="text-center">Tekst wyrównany do środka.</p> 
+<p class="text-right">Tekst wyrównany do prawej.</p> 
+<p class="text-justify">Tekst wyjustowany.</p> 
+<p class="text-nowrap">Tekst się nie zawija.</p> 
+
+-Klasy do transformacji tekstu: 
+<p class="text-lowercase">Tekst małymi literami.</p> 
+<p class="text-uppercase">Tekst dużymi literami.</p> 
+<p class="text-capitalize">Zmienia pierwszą literę w tekście na dużą.</p>
+
+
+
+BUTTONS:
+Za pomocą klas Bootstrapa można nadać elementom <a>, <button> oraz <input> wygląd przycisków. 
+
+Klasy Bootstrapa dla przycisków dotyczą m.in.: 
+•  kolorów 
+•  rozmiarów 
+•  grupowania przycisków 
+
+Klasy dla kolorów: 
+<button type="button" class="btn btn-primary">Primary</button> - niebieski (obramowanie)
+<button type="button" class="btn btn-success">Success</button> - zielony
+<button type="button" class="btn btn-info">Info</button> - blekitny
+<button type="button" class="btn btn-warning">Warning</button> - pomaranczowy 
+<button type="button" class="btn btn-danger">Danger</button> - czerwony
+<button type="button" class="btn btn-link">Link</button> - tylko napis blekitny
+
+Klasy dla rozmiarów: 
+<button type="button" class="btn btn-primary btn-lg">Duży rozmiar</button> 
+<button type="button" class="btn btn-primary">Domyślny rozmiar</button> 
+<button type="button" class="btn btn-primary btn-sm">Mały rozmiar</button> 
+
+
+
+
+KOMPONENTY CSS:
+Bootstrap oferuje również wiele zdefiniowanych komponentów, które można w łatwy sposób dodać do strony internetowej. 
+Wystarczy skopiować przykładowy kod komponentu i umieścić go w wybranym miejscu na stronie.  
+
+
+KOMPONENTY CSS – MENU:
+Ważny elementem strony internetowej jest menu nawigacyjne. Jest to element znajdujący się na każdej stronie www. Dzięki Bootstrapowi możemy zbudować w pełni responsywną nawigację. 
+ 
+Menu budowane za pomocą Bootstrapa może mieć różne postacie, np.: 
+•  menu statyczne na górze strony; 
+•  menu znajdujące się w tym samym miejscu mimo scrollowania (fixed) – na górze strony lub na dole strony; 
+•  menu kilku poziomowe; 
+•  menu na całą szerokość strony lub nie; 
+•  menu z elementami formularza; 
+•  i wiele innych. 
+
+np.
+Proste, statyczne menu nawigacyjne.
+<nav id="main-nav" class="navbar navbar-expand-lg navbar-light"> 
+Menu znajdujące się zawsze na górze strony przy scrollowaniu.
+<nav id="main-nav" class="navbar navbar-expand-lg navbar-light .fixed-top">
+
+
+KOMPONENTY W JAVASCRIPT:
+Są wśród nich m.in.: 
+•  pokaz slajdów 
+•  okna powiadomień 
+•  modale  
+•  taby 
+•  toggle
+
+
+KOMPONENTY JAVASCRIPT - SLIDER:
+Jednym z najpopularniejszych komponentów Bootstrap JavaScript jest pokaz slajdów. 
+Komponent ten wyświetla slajdy w karuzeli. Takie karuzele to częsty element stron www.  
+W nich znajdują się slogany firm, motta i itp. 
+
+Aby karuzela byla widoczna wymagane jest dodanie klasy .active do pierwszego slajdu. 
+ 
+Karuzela prócz obrazków może zawierać także podpisy do nich.  
+Aby podpis był widoczny w krauzeli należy go umieścić między: 
+ 
+<div class="carousel-caption">  
+<!-- Tekst na slajdzie --> 
+</div> 
+ 
+Aby karuzela mogła poprawnie działać należy podlinkować do strony bibliotekę jQuery oraz odpowiedni plik ze skryptami JS z frameworka Bootstrap. 
+ 
+Można używać wielu karuzel w projekcie, ale należy pamiętać aby każdej nadać indywidualne id. 
+ 
+Karuzel nie można zagnieżdżać.
