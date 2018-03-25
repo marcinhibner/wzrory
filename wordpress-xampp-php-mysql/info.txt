@@ -1,0 +1,160 @@
+INSTALACJA WORDPRESSa:
+Aby zainstalować WordPressa potrzebny jest serwer obsługujący PHP oraz MySQL. Należy zainstalować serwer na komputerze, aby używać WordPressa lokalnie.
+
+XAMPP to najpopularniejszym darmowy pakiet serwera WWW dla PHP. 
+Jest to pakiet zawierajacy serwer Apache, bazę danych MySQL oraz interpreter języków PHP i Perl.
+
+1 Instalujemy XAMPP i uruchamiamy przyciskami start PHP i MYSQL.
+
+Po włączeniu Apache i MySQL możemy sprawdzić czy wszystko działa prawidłowo klikając w przycisk Admin przy module Apache lub przechodząc w przeglądarce pod adres: http://localhost
+
+TWORZENIE LOKALNEJ BAZY DANYCH:
+Do zainstalowania WordPressa potrzebna będzie baza danych MySQL.  
+W pakiecie XAMPP nową bazę danych tworzy się za pomocą narzędzia phpMyAdmin. 
+
+2 Aby otworzyć phpMyAdmin należy kliknąć przycisk Admin‚ przy module MySQL lub wpisując w przeglądarce adres:  http://localhost/phpmyadmin/ 
+
+3 klikamy w Bazy danych i tworzymy nowa baze.
+
+4 Po jej utworzeniu na gorze przechodzimy do Uprawnienia i dodajemy uzytkownika nadajac mu pelne uprawnienia.
+
+5 Pobieramy WordPressa. 
+Pakiet instalacyjny można pobrać z https://pl.wordpress.org/ 
+Po pobraniu należy go rozpakować. 
+Następnie przechodzimy do katalogu C:\xampp\htdocs. Należy stworzyć w nim nowy katalog, np. C:\xampp\htdocs\wpexample i skopiować bezpośrednio do niego wszystkie pliki instalacyjne WordPressa.
+
+6 Za pomocą przeglądarki internetowej przechodzimy do katalogu zawierającego pliki instalacyjne WordPressa (http://localhost/wpexample/) co spowoduje pojawienie się panelu instalacyjnego.
+
+7 Rozpoczynamy instalacje, wypelniamy wszystkie pola i klikamy wyslij. Uzupelniamy reszte pol i instalujemy.
+
+8 Po instalacji widzimy panel logowania.
+Strona jest dostępna pod adresem http://localhost/wpexample/, a panel WordPressa http://localhost/wpexample/wp-admin/ 
+
+
+
+
+
+PRACA Z WORDPRESSem:
+
+MOTYWY W WORDPRESSie:
+WordPress posiada wiele darmowych jak i płatnych motywów. Można również stworzyć własny motyw i z niego korzystać. Domyślnie WordPress w czasie instalacji instaluje 3 motywy. 
+Zarządzać motywami (zmieniać, usuwać, instalować nowe) w WordPressie można w zakładce Wyglad > Motywy.
+
+
+WTYCZKI W WORDPRESSie:
+Zarządzać wtyczkami (usuwać, instalować nowe, włączać/wyłączać) w Wordpressie można w zakładce Wtyczki. 
+Można korzystać z darmowych i płatnych wtyczek. Domyślnie WordPress po instalacji posiada dwie wtyczki: 
+•  Akismet – wtyczka do wyłapywania spamu w komentarzach. 
+•  Hello Dolly – po włączeniu tej wtyczki, w prawym górnym rogu każdego ekranu kokpitu będzie wyświetlany losowy wers Hello, Dolly. 
+
+Po zainstalowaniu wtyczki trzeba włączyć – domyślnie wtyczki po instalacji są wyłączone. 
+
+Instalacja wtyczek do WordPressa jest możliwa na dwa sposoby: 
+1.  Przez panel admina 
+•  Wejdź na stronę z listą wtyczek. 
+•  Kliknij link Dodaj nową. 
+•  Wybierz Wyślij wtyczkę na serwer (wybierz plik wtyczki z dysku – musi to być plik zip – nie rozpakowuj wcześniej pliku zip) lub wyszukaj wtyczki w repozytorium WordPressa. 
+•  Po poprawnej instalacji aktywuj wtyczkę. 
+
+2.  Ręczna instalacja na serwerze 
+•  Ściągnij i rozpakuj plik z wtyczką. 
+•  Wgraj cały katalog wtyczki do katalogu /wp-content/plugins/ na serwerze. 
+•  Aktywuj wtyczkę w menu Wtyczki w panelu administracyjnym WordPressa. 
+
+
+TWORZENIE WPISOW:
+WordPress jest platformą blogową co oznacza, że w łatwy sposób można za jego pomocą prowadzić bloga, zarządzać wpisami (usuwać, edytować, publikować).  
+Aby zobaczyć wszystkie utworzone wpisy należy przejść do zakładki Wpisy.
+
+Aby dodać nowy wpis, należy przejść do zakładki Wpisy > Dodaj nowy. 
+ 
+W formularzu dodawania wpisu należy podać tytuł, a następnie uzupełnić treść. Można dodać obraz wyróżniający, który wyświetli się wraz z postem oraz kategorie wpisu i tagi. Można także wybrać format wpisu (zależnych od zdefiniowanych w motywie). 
+ 
+Po zakończeniu edycji należy kliknąć Opublikuj, co spowoduje zapisanie pracy i umieszczenie wpisu w serwisie.  
+ 
+Panel zawierający przycisk Opublikuj ma też kilka innych funkcji. Edytując datę publikacji, można zaplanować publikację nowego wpisu. W każdym momencie pracy z nową treścią można skorzystać z funkcji podglądu zmian oraz zapisu szkicu. 
+
+
+TWORZENIE STRON:
+Drugim podstawowym typem treści WordPressa są strony.  
+Za ich pomocą publikowane są stałe elementy serwisu, takie jak Kontakt czy O nas.  
+ 
+Strony różnią się od wpisów rodzajem przechowywanych treści. Często posiadają znacznie bardziej rozbudowaną strukturę, a ich zawartość raczej się nie zmienia. 
+ 
+Aby zobaczyć wszystkie utworzone strony należy przejść do zakładki Strony. W zakładce Strony można dodać zarówno nową stronę, jak i dokonać edycji tych już obecnych w serwisie.  
+
+Tworzenie nowej strony odbywa się w taki sam sposób, jak tworzenie wpisów. 
+ 
+W przeciwieństwie do wpisów strony dają możliwość edycji hierarchii oraz wybór szablonu strony.  
+ 
+Wiele motywów udostępnia kilka widoków, za pomocą których można prezentować treści. 
+ 
+Często motywy dostarczają osobne widoki przygotowane dla strony głównej lub kontaktowej, które zawierają odpowiednie dla stron o tych funkcjach bloki oraz układ. 
+
+
+STATYCZNA STRONA GLOWNA:
+WordPress od początku był pomyślany jako system blogowy, a więc w domyślnej konfiguracji po wejściu na stronę wyświetlana jest lista blogowych wpisów.  
+ 
+Aby po wejściu na stronę WordPress użytkownicy zobaczyli statyczną stronę, a nie chronologiczną listę wpisów, należy wprowadzić kilka zmian w konfiguracji.  
+1.  Utwórz stronę, która ma być wyświetlana po wejściu na stronę WWW oraz stronę dla wpisów np. Blog – jeśli też chcesz prowadzić bloga. 
+2.  Przejdź do zakładki Ustawienia > Ustawienia czytania.  
+•  W pozycji Strona główna wyświetla kliknij opcję statyczną stronę. 
+•  Wskaż jako Stronę główną – utworzoną wcześniej stronę, a jako Stronę z wpisami – stronę przeznaczoną dla wpisów. 
+•  Kliknij Zapisz zmiany. 
+
+Teraz po wejściu na stronę WWW użytkownik zobaczy wybraną stronę, a na osobnej stronie będzie mógł przeglądnąć wpisy. 
+
+Aby umożliwić łatwiejsze poruszanie się użytkownikowi po stronie można stworzyć menu nawigacyjne z wybranymi stronami (zakładka Wygląd > Menu). 
+
+
+
+
+
+PRACA Z PLIKAMI:
+
+STRUKTURA PLIKOW:
+WordPress posiada wiele plików i katalogów. Nie powinno się zmieniać plików WordPress Core.  
+ 
+Plik, które można edytować to: 
+•  pliki w głównym katalogu: wp-config.php oraz .htaccess 
+•  pliki katalogu wp-content 
+
+-wp-config.php jest to jeden z najważniejszych plików.  
+Zawiera bazowe szczegóły konfiguracji witryny, takie jak dane do połączenia z bazą danych. 
+Plik tworzony jest automatycznie przy instalacji WordPressa na podstawie wprowadzonych danych.  
+
+-W katalogu wp-content znajdują się pliki wtyczek, tłumaczeń, motywów oraz mediów czyli wszystko to na co administrator witryny ma wpływ. 
+Najważniejszymi plikami dla administratora witryny są pliki dotyczące motywów.  
+Służą one do dostosowania motywu do potrzeb witryny. 
+
+-Struktura drzewa katalogów w motywie WP wygląda następująco: 
+-site_root (www)
+   -wp-content
+      -themes (katalog w ktorym sa motywy)
+          -nazwa_motywu (katalog z plikami motywu)
+              -style.css (wymagany plik motywu)
+              -index.php (opcjonalny plik motywu)
+              
+-style.css – to najważniejszy, i jako jedyny wymagany plik w motywie. To w nim znajduje się nagłówek informujący WordPress o nazwie, wersji i autorze motywu. Znajdują się w nim również wszystkie reguły definiujące wygląd strony. 
+
+-index.php –  jest drugim bardzo ważnym plikiem. Właściwie, mając odpowiednio napisaną strukturę strony w tym pliku, i gotowy arkusz stylów (style.css) wystarczy, aby nazwać go gotowym motywem WP.  Odpowiada za wyświetlanie wpisów na blogu. 
+ 
+W parze z index.php idzie plik 
+-single.php, który odpowiada za wyświetalnie pojedynczego wpisu.  
+Jeżeli w motywie nie ma pliku single.php to do wyświetlania pojedynczego wpisu wykorzystywany jest index.php 
+
+
+Każdy motyw WP można podzielić na następujące bloki logiczne: 
+-Header (header.php) – zawsze tutaj powinno znaleźć się wszystko od tagu <html>, cała sekcja <head>, aż do początku sekcji <body>.  
+Zwykle umieszcza się tutaj jeszcze górne logo oraz nawigację.  
+Aby wczytać header.php np. do pliku index.php należy użyć funkcji get_header(). 
+
+-Content (index.php, single.php, page.php, category.php, author.php, search.php, itd. ) – w tym bloku, umieszcza się pętlę wyświetlającą wpisy, główną treść witryny.   
+W tym plikach umieszcza się instrukcje dołączające pozostałe składowe motywu (header, sidebar, footer). 
+
+-Footer (footer.php) – stopka, czyli praktycznie wszystko to, co znajduje się na dole witryny – informacje o prawach autorskich, rok założenia strony, rzadziej dolne menu nawigacyjne, dolne widgety. 
+Aby wczytać footer.php należy użyć funkcji get_footer(). 
+
+-Sidebar (sidebar.php) – Jak nazwa wskazuje, umieszcza się w nim wszystko to, co ma znaleźć się w kolumnie np. z widgetami, jakimś menu nawigacyjnym. 
+Aby wczytać sidebar.php należy użyć funkcji get_sidebar(). 
+
