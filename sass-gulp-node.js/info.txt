@@ -1,0 +1,181 @@
+PREPROCESORY CSS:
+To narzędzie pozwalające tworzyć oraz utrzymywać arkusze stylów w sposób dużo lepiej zorganizowany i czytelny. Dzięki nim możemy lepiej zarządzać arkuszem i szybciej dokonywać w nich zmian. 
+
+
+SASS:
+Jest językiem skryptowym, którego kod przetwarzany jest do plików wynikowych kaskadowych arkuszy stylów - CSS. 
+Wprowadza on całkiem sporą liczbę udogodnień dla programisty począwszy od struktur zagnieżdżonych, poprzez mixiny, zmienne, kończąc na pętlach zarówno warunkowych jak i iteracyjnych.
+
+
+INSTALACJA SRODOWISKA:
+Do skompilowania plików napisanych w SASS wykorzystamy narzędzie do automatyzacji pracy jakim jest GULP, którego komponenty pozwalają na pracę z preprocesorami CSS.
+
+-Do działania GULP wymaga silnika node.js. Należy go pobrać i zainstalować ze strony 
+https://nodejs.org/en/  
+
+-Praca z GULPem odbywa się z wykorzystaniem konsoli. 
+Pierwszym krokiem jest globalna instalacja GULPa za pomocą komendy 
+npm install gulp -g 
+ 
+-Następnie tworzymy folder roboczy i w tym folderze inicjujemy nowy projekt, który stworzy plik informacyjny o naszym projekcie w formacie json  
+npm init
+
+-Następnie instalujemy wersję GULPa dla naszego projektu cały czas będąc w folderze roboczym 
+npm install gulp --save-dev 
+
+-Dodatkowo w folderze roboczym tworzymy folder app – w którym będziemy przechowywać nasz projekt oraz folderze głównym projektu tworzymy plik gulpfile.js, który jest plikiem konfiguracyjnym GULPa
+
+-Aby uruchomić kompilowanie SASS w GULPie należy zainstalować odpowiednie rozszerzenie 
+npm install gulp-sass --save-dev 
+
+PRZYKŁADOWA STRUKTURA PROJKETU: 
+|- folder-projektu  
+     |- app   
+           |- index.html   
+           |- js    
+                |- main.js   
+           |- scss    
+                |- styles.scss   
+           |- css    
+                |- styles.css   
+     |- gulpfile.js  
+     |- package.json  
+     |- node_modules 
+     
+     
+     
+TWORZYMY RECZNIE PLIK KONFIGURACYJNY gulpfile.js:
+
+     var gulp = require('gulp'); 
+     var sass = require('gulp-sass'); 
+ 
+     gulp.task('sass', function(){   
+       return gulp.src('app/scss/**/*.scss')      
+       .pipe(sass())     
+       .pipe(gulp.dest('app/css')); 
+     }); 
+ 
+     gulp.task('watch', function(){   
+     gulp.watch('app/scss/**/*.scss', ['sass']);  
+     }); 
+     
+     
+Aby uruchomić śledzenie zmian i automatyczne kompilowanie plików css wykorzystujemy komendę 
+gulp watch 
+
+
+
+SASS - ZMIENNE:
+Zmienne w SASS definiujemy za pomocą znaku $ 
+Następnie deklarujemy nazwę zmiennej oraz jej wartość. 
+np.
+$base-color: #220000; 
+
+Tak zadeklarowaną zmienną możemy wykorzystywać wielokrotnie w projekcie. 
+np. SCSS 
+    $base-color:  #220000; 
+ 
+    body {  
+    color: $base-color; 
+} 
+ 
+    CSS 
+    body {  
+    color:  #220000; 
+}
+
+
+
+SASS ZAGNIEZDZANIE:
+Pisząc arkusz za pomocą preprocesorów należy trzymać się zasady DRY czyli don’t repeat yourself (nie powtarzaj się). Aby praktykować tą zasadę kod należy pisać w zagnieżdżonych instrukcjach. 
+np. SCSS 
+    nav {  
+        ul {   
+        margin: 0;   
+        padding: 0;   
+        list-style: none;   
+           li {    
+           display: inline-block;   
+         }  
+    } 
+} 
+
+    CSS 
+    nav ul {  
+    margin: 0;  
+    padding: 0;  
+    list-style: none; 
+    } 
+    nav ul li {  
+    display: inline-block; 
+    } 
+    
+    
+    
+SASS PARTIALS:
+Poszczególne style dla elementów naszego projektu możemy definiować w osobnych plikach. Takie pliki mają nazwę zaczynającą się od znaku podkreślenia „_”. np. _zmienne.scss , _mixin.scss
+
+Następnie taki plik możemy dołączyć do innych plików naszego projektu za pomocą słowa kluczowego @import 
+np. @import "zmienne"; 
+
+
+SASS MIXINS:
+W przypadku powtarzających się zestawów warunków i ich wartości możemy tworzyć tak zwane mixiny. Pozwalają one raz zdefiniować zestaw właściwości i wartości, a następnie inkludować go wewnątrz reguły. 
+//Definicja 
+@mixin nazwa {    
+   zestaw właściwości i wartości 
+} 
+ 
+// Wywołanie w selektorze 
+.single-item {     
+   @include nazwa; 
+} 
+
+np.   SCSS 
+      @mixin absolute-center {  
+          position: absolute;  
+          transform: translateY(-50%);  
+          top: 50%;  
+          right: 0;  
+          left: 0;  
+          margin: 0 auto;  
+          text-align: center; 
+} 
+  
+    // wywolanie
+    .header-caption {  
+          @include: absolute-center; 
+} 
+
+      CSS 
+      .header-caption {  
+           position: absolute;  
+           transform: translateY(-50%);  
+           top: 50%;  
+           right: 0;  
+           left: 0;  
+           margin: 0 auto;  
+           text-align: center; 
+}
+
+
+Definiując mixin możemy dynamicznie przypisywać wartości do właściwości za pomocą parametrów: 
+np. SCSS 
+    @mixin border-radius($radius) {   
+         -webkit-border-radius: $radius;  
+         -moz-border-radius: $radius;  
+         -ms-border-radius: $radius;  
+          border-radius: $radius; 
+    } 
+ 
+    .box { 
+        @include border-radius(10px); 
+    } 
+    
+    CSS 
+    .box {  
+         -webkit-border-radius: 10px;  
+         -moz-border-radius: 10px;  
+         -ms-border-radius: 10px;  
+          border-radius: 10px; 
+    }
