@@ -295,3 +295,11 @@ document.getElementById( 'exampleLink' ).addEventListener( 'click', function(e) 
     e.stopPropagation(); 
     alert( 'Kliknięto link' );  
 } ); 
+    
+    
+
+    
+LINKI:
+-Manipulacja DOM-html i css. Więcej właściwość CSS: http://www.w3schools.com/jsref/dom_obj_style.asp 
+    
+-Pełna lista typów eventów: http://www.w3schools.com/jsref/dom_obj_event.asp        
