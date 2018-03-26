@@ -1,0 +1,5 @@
+LINKI:
+-edytor tekstu Brackets  http://brackets.io/
++ rozszerzenie Emmet 
+
+-dokumentacją Emmeta http://docs.emmet.io/  oraz ze skrótami, które możesz wykorzystać pisząc kod strony http://docs.emmet.io/cheat-sheet/ 
