@@ -39,5 +39,19 @@ git merge master nazwa galezi - polaczenie plikow z obu galezi
 
 LINKI:
 - plik instalacyjny Git  https://github.com/git-for-windows/git/releases/  
+v https://git-scm.com/downloads 
  
 -Program GitHub Desktop. Posłuży on do wysyłania i pobierania kodu Twoich projektów z GitHuba oraz do śledzenia zmian na poszczególnych etapach pracy - https://desktop.github.com/ 
+
+-serwis GitHub https://github.com/
+
+-Szczegółowe informacje na temat działania GitHuba można znaleźć pod tym linkiem https://guides.github.com/activities/hello-world/ 
+
+-Aby lepiej zrozumieć działanie podstawowych komend w terminalu zapoznaj się z tym materiałem https://tutorial.djangogirls.org/pl/intro_to_command_line/ 
+
+-możliwości jakie daje GIT.  oficjalny poradnik GITa  
+https://git-scm.com/book/pl/v1/Pierwsze-kroki  
+
+-Pełna dokumentacja GITa dostępna jest pod linkiem 
+https://git-scm.com/documentation  
+ 
