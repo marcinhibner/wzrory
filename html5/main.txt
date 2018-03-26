@@ -10,3 +10,6 @@ https://validator.w3.org/
 -Do przesyłania treści formularzy możemy wykrzystać serwis 
 https://formspree.io/ 
 Pozwala on na przesyłanie treści formularzy na wskazany przez nas adres email. 
+
+-Nad standardem języka HTML czuwa organizacja W3C. Oficjalana i pełna dokumentacja HTML przygotowana przez W3C jest dostępna pod linkiem:  
+https://www.w3.org/TR/html5/   
