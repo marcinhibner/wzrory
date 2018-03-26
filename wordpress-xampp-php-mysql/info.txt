@@ -158,3 +158,187 @@ Aby wczytać footer.php należy użyć funkcji get_footer().
 -Sidebar (sidebar.php) – Jak nazwa wskazuje, umieszcza się w nim wszystko to, co ma znaleźć się w kolumnie np. z widgetami, jakimś menu nawigacyjnym. 
 Aby wczytać sidebar.php należy użyć funkcji get_sidebar(). 
 
+
+
+CHILD THEMES:
+Motyw potomny (child theme) to motyw, który dziedziczy funkcjonalność i stylistykę innego motywu. Motywy potomne są zalecanym sposobem modyfikacji istniejących motywów. 
+
+Ważne jest aby korzystać z motywu potomnego, żeby przy aktualizacji motywu głównego nie utracić zmian wprowadzonych w nim. 
+
+Motyw potomny składa się z co najmniej jednego katalogu (katalogu motywu potomnego) oraz dwóch pliki (style.css i functions.php), które trzeba będzie utworzyć. 
+
+np. Struktura motywu Twentyfifteen:
+     katalog twentyfifteen
+     katalog twentyfifteen-child
+            plik functions.php
+            plik style.css
+            
+-style.css MUSI zawierac naglowek:
+/*
+ Theme Name:   Septera Child
+ Theme URI:    http://example.com/twenty-fifteen-child/
+ Description:  Septera Child Theme
+ Author:       John Doe
+ Author URI:   http://example.com
+ Template:     septera
+ Version:      1.0.0
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ Tags:         light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
+ Text Domain:  septera-child
+*/
+
+-functions.php zawiera definicję stylów css dla motywu potomnego: 
+<?php function my_theme_enqueue_styles() {
+
+    $parent_style = 'parent-style'; // This is 'twentyfifteen-stylr' for the Twenty Fifteen theme.
+    
+    wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css' );
+    wp_enqueue_style( 'child-style',
+         get_stylesheet_directory_uri() . '/style.css',
+         array( $parent_style ),
+         wp_get_theme()->get('Version')
+    );
+}
+add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_styles' ); ?>
+
+Motyw potomny jest gotowy do aktywacji. Aby go aktywować należy to zrobić w panelu administratora. 
+ 
+
+
+CUSTOM POST TYPE:
+WordPress może przechowywać i wyświetlać wiele różnych typów treści.  
+ 
+Pojedynczy element takiej treści jest powszechnie nazywany post, chociaż post to również specyficzny rodzaj postu.  
+ 
+Wewnętrznie, wszystkie rodzaje postów są przechowywane w tym samym miejscu, w wp_posts tabeli bazy danych, ale odróżniają się przez kolumnę o nazwie post_type. 
+
+WordPress posiada kilka domyślnych typów postów, takich jak: •  Post/Wpis (post type: post); •  Strona (post type: page); •  Załącznik/media (post type: attachment); •  Menu nawigacyjne (post type: nav_menu_item); 
+ 
+Można też tworzyć niestandardowe typy postów (custom posts type) za pomocą funkcji register_post_type(). 
+
+<?php
+
+    // Funkcja tworzaca custom post type
+    function register_offer_post_type() {
+    
+       $labels = array(
+           'name'             => _( 'Oferty', 'text-domain' ), //Ogolna nazwa typu postow
+           'singular_name'    => _( 'Oferta', 'text-domain' ) //Nazwa dla jednego obiektu tego typu 
+        );
+        
+        $supports = array( 'title', 'thumbnail', 'editor' );
+        
+        $args = array(
+             'labels'         => $labels, //Etykiety dla danego typu postow
+             'description'    => _( 'Lista ofert.', 'text-domain' ), //Opis
+             'public'         => true, //Kontrola widocznosci tego typu postow
+             'has_archive'    => true, //Czy dany typ postow ma archiwum
+             'rewrite'        => array( 'slug' => 'offer' ), //Slug postow tego typu
+             'supports'       => $supports
+        );
+        
+        register_post_type( 'offer', $args ); //Rejestracja postow o typie offer
+    }
+    
+    //Podlaczenie funkcji w konfiguracji motywu
+    add_action( 'init', 'register_offer_post_type' );
+    
+?>
+
+
+
+SZABLONY STRON:
+Szablony stron to specyficzny rodzaj plików w motywie WordPressa. 
+ 
+Cechy wyróżniające szablony stron: 
+•  służą do zmiany wyglądu i sposobu działania strony; 
+•  może być stosowany dla jednej lub kilku stron; 
+•  są bardziej szczegółowe, np. szablon strony page-about.php jest bardziej szczegółowy niż pliki szablonu page.php lub index.php. 
+
+Domyślnie WordPress kontroluje wygląd strony za pomocą pliku szablonu o nazwie page.php (jeśli taki istnieje, jeśli nie to index.php). 
+
+Szablonu ten kontroluje wszystkie pojedyncze strony.  
+<?php
+/**
+ * page.php
+ *
+ * The template for displaying all pages.
+ */
+?>
+
+<?php get_header(); ?>
+<?php while( have_posts() ) : the_post(); ?>
+<main class="container">
+    <section>
+         <?php the_content(); ?>
+    </section>
+</main>
+<?php endwhile; ?>
+<?php get_footer(); ?>
+
+
+Jednak nie wszystkie strony są takie same. 
+Tworzenie szablonu strony w WordPress wymaga podstawowej wiedzy na temat HTML, CSS i PHP . 
+
+Tworzenie prostego szablonu stron: 
+1.  Utwórz pusty plik w motywie. 
+2.  Nazwij go np. page-contact.php – plik musi mieć rozszerzenie php 
+3.  Dodaj następujący kod na samym początku pliku 
+
+<?php
+/**
+ * Template Name: Contact
+ */
+?>
+
+4.  Zapisz plik. Gotowe! Został utworzony pusty szablon strony. Teraz można dodać dowolny HTML lub kod PHP w tym pliku pomagający dostosować szablon do danej strony. 
+ 
+ 
+Aby podpiąć dany szablon do strony należy wejść w panel administracyjny WordPressa, edytować istniejącą lub utworzyć nową stronę. 
+ 
+Na ekranie edycji stron, przejdź do sekcji Atrybuty strony, gdzie znajduje się menu rozwijane dostępnych szablonów, z którego można wybrać szablon dla danej strony.
+
+Po zapisaniu zmian i przejściu na daną stronę, będzie można zobaczyć pustą stronę. To dlatego, że szablon jest pusty i nie mówi, co WordPress ma wyświetlić. 
+
+
+
+
+PĘTLA WP_QUERY:
+Pętla WP_Query jest używana w WordPressie do wyświetlania typów postów, zarówno tych wbudowanych jaki i niestandardowych. 
+ 
+Pętla przegląda bazę danych i wyświetla wybrane informacje o danym typie postów. 
+ 
+Za pomocą pętli można pobrać wszystkie informacje jakie są potrzebne. Można również wyświetlać w każdym poście inne informacje. 
+ 
+
+
+
+
+LINKI:
+-Więcej informacji o XAMPP, pliki instalacyjne oraz tutorial instalacji można znaleźć na: https://www.apachefriends.org/pl/index.html 
+
+-Pakiet instalacyjny WordPressa można pobrać z. https:// pl.wordpress.org/
+
+-Więcej o plikach (struktura plikow): https://codex.wordpress.org/WordPress_Files 
+
+-Więcej o pliku (style.css) i jego tworzeniu: https://codex.wordpress.org/Theme_Development 
+
+-Pełna lista plików szablonu, o tym jak powinny się nazywać i co zawierać znajduje się pod adresem: https://codex.wordpress.org/Theme_Development#Template_Files_List
+
+-Więcej o motywach potomnych: https://codex.wordpress.org/Child_Themes 
+
+-Więcej o niestandardowych typach postów i ich opcjach: 
+https://codex.wordpress.org/Post_Types 
+https://codex.wordpress.org/Function_Reference/ register_post_type  
+
+-Więcej o szablonach: 
+https://developer.wordpress.org/themes/template-files-section/ page-templates/ 
+http://www.wpbeginner.com/wp-themes/how-to-create-acustom-page-in-wordpress/ 
+
+-Więcej o pętli WP_Query: 
+https://codex.wordpress.org/The_Loop 
+http://www.wpbeginner.com/glossary/loop/
+
+-Pamiętaj! Podczas pracy z WordPressem przestrzegaj zasad WordPress Codex. Gdzie również znajdziesz więcej na temat WordPressa. 
+https://codex.wordpress.org/ 
