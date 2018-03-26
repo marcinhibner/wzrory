@@ -34,3 +34,10 @@ git push origin nazwa galezi - wysylamy nowa galaz
 git checkout master - przelaczenie sie na glowna galaz
 git diff master..nazwa galezi - porownanie obu galezi
 git merge master nazwa galezi - polaczenie plikow z obu galezi 
+
+
+
+LINKI:
+- plik instalacyjny Git  https://github.com/git-for-windows/git/releases/  
+ 
+-Program GitHub Desktop. Posłuży on do wysyłania i pobierania kodu Twoich projektów z GitHuba oraz do śledzenia zmian na poszczególnych etapach pracy - https://desktop.github.com/ 
