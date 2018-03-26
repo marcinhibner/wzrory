@@ -219,3 +219,28 @@ $( "button" ).click( function() {
     $( "div" ).animate( { left: '100px' }, "slow" );   
     $( "div" ).animate( { fontSize: '3em' }, "slow" ); 
 } ); 
+
+
+
+
+LINKI:
+-Porównanie składni jQuery z czystym Javascript na wybranych przykładach można znaleźć pod adresem: 
+http://youmightnotneedjquery.com/  
+    
+-Ze strony http://jquery.com/download/ można ściągnąć plik z biblioteką na dysk do katalogu, w którym znajduje się projekt i dołączyć go tak jak inne pliki z rozszerzeniem .js. 
+    
+-Dodanie jquery. Najłatwiej przejść na stronę https://cdnjs.com/, wpisać jQuery i po wyszukaniu skopiować adres url. 
+    
+-Więcej selektorów: http://www.w3schools.com/jquery/jquery_ref_selectors.asp 
+    
+-Edycja html i css. Więcej metod do manipulacji HTML i CSS: 
+http://www.w3schools.com/jquery/jquery_ref_html.asp 
+
+-Poruszanie sie po DOM. Więcej metod do manipulacji HTML i CSS: 
+http://www.w3schools.com/jquery/jquery_ref_traversing.asp 
+    
+-Więcej zdarzeń jQuery: 
+http://www.w3schools.com/jquery/jquery_ref_events.asp  
+
+-Więcej efektów animacji: 
+http://www.w3schools.com/jquery/jquery_ref_effects.asp
