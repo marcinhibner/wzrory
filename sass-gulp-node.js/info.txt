@@ -179,3 +179,13 @@ np. SCSS
          -ms-border-radius: 10px;  
           border-radius: 10px; 
     }
+
+
+
+
+LINKI:
+-Do działania GULP wymaga silnika node.js. Należy go pobrać i zainstalować ze strony 
+https://nodejs.org/en/  
+
+-Więcej możliwości GULPa i jego konfigurację znajdziecie pod adresem 
+https://css-tricks.com/gulp-for-beginners/
