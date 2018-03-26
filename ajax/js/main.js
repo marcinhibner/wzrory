@@ -117,3 +117,13 @@ $.ajax({
     onerror: function (msg) {         
         console.log(msg);     } 
 }); 
+
+
+
+
+LINKI:
+-Dokładna dokumentacja i opis obiektu XMLHttpRequest znajduje się pod adresem: https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest  
+
+-Dokumentacja i dokładny opis funkcji w obiekcie jQuery -  jQuery.getJSON() http://api.jquery.com/jquery.getjson/ 
+
+-Dokumentacja i dokładny opis funkcji w obiekcie jQuery -  jQuery.ajax() http://api.jquery.com/jquery.ajax/ 
