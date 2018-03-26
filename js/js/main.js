@@ -376,3 +376,9 @@ np. {
                  {"firstName": "Peter", "lastName": "Jones"}    
                  ] 
 }
+    
+    
+    
+LINK:
+Pełną dokumentację jezyka JavaScript znajdziesz pod linkiem 
+http://www.w3schools.com/jsref/default.asp  
