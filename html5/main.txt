@@ -1,0 +1,12 @@
+LINKI:
+-Lista znaczników pogrupowana wg ich kategii na stronie W3C SCHOOL 
+http://www.w3schools.com/tags/ref_byfunc.asp
+
+-Nad standardem HTML czuwa organizacja W3C. Udostępnia ona narzędzie, które pozwala sprawdzać poprawność naszego kodu.  
+https://validator.w3.org/ 
+
+-Listę typów pól formularza można znaleźć pod adresem  http://www.w3schools.com/html/html_form_input_types.asp  
+
+-Do przesyłania treści formularzy możemy wykrzystać serwis 
+https://formspree.io/ 
+Pozwala on na przesyłanie treści formularzy na wskazany przez nas adres email. 
