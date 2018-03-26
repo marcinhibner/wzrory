@@ -189,3 +189,27 @@ Aby karuzela mogła poprawnie działać należy podlinkować do strony bibliotek
 Można używać wielu karuzel w projekcie, ale należy pamiętać aby każdej nadać indywidualne id. 
  
 Karuzel nie można zagnieżdżać.
+
+
+
+
+LINKI:
+-Dokładna dokumentacja frameworka i opis wszystkich komponentów można znaleść po adresem: http://getbootstrap.com/ 
+
+-Dodanie bootstrap za pomocą linków Bootstrap CDN ( https://www.bootstrapcdn.com/beta/)
+
+-Dodanie bootstrapa poprzez ściągniecie plikow frameworka z http://getbootstrap.com/docs/4.0/getting-started/download/ bezpośrednio do projektu i dołączenie go lokalnie. 
+
+-Należy pamiętać ze Bootstrap JavaScript wymaga biblioteki jQuery!!! Do poprawnego działania menu nawigacyjnego wymagana jest biblioteka popper.js  - https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js 
+
+-Flexbox, o którym można przeczytać https://css-tricks.com/snippets/css/a-guide-to-flexbox/  
+
+-Pełny opis typografii frameworka znajduje się na http://getbootstrap.com/docs/4.0/content/typography/
+
+-Więcej o klasach dla przycisków: https://getbootstrap.com/docs/4.0/components/buttons/ https://getbootstrap.com/docs/4.0/components/button-group/ https://getbootstrap.com/docs/4.0/components/dropdowns/ 
+
+-Opis wszystkich komponentów znajduje się na: https://getbootstrap.com/docs/4.0/getting-started/introduction/ - zakładka „Components” 
+
+-Więcej o menu nawigacyjnym: https://getbootstrap.com/docs/4.0/components/navbar/ 
+
+-Pełny opis karuzeli Bootstrapa: http://getbootstrap.com/docs/4.0/components/carousel/ 
